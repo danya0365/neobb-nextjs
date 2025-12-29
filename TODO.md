@@ -90,9 +90,10 @@
 - [x] app/auth/register/page.tsx
 
 ### Admin
-- [ ] app/admin/page.tsx (Dashboard)
-- [ ] app/admin/boards/page.tsx
-- [ ] app/admin/users/page.tsx
+- [x] app/admin/page.tsx (Dashboard)
+- [x] app/admin/boards/page.tsx
+- [x] app/admin/users/page.tsx
+- [x] app/admin/settings/page.tsx
 - [ ] app/admin/widgets/page.tsx
 - [ ] app/admin/themes/page.tsx
 
