@@ -90,22 +90,21 @@ export function RetroLandingContent() {
 
         {/* Main Content */}
         <div className="flex-1 flex flex-col gap-4 overflow-auto">
-          {/* Marquee */}
           <div
-            className="p-2 text-center"
+            className="p-2 text-center overflow-hidden"
             style={{
               backgroundColor: "#000080",
               color: "#ffff00",
               fontWeight: "bold",
             }}
           >
-            <marquee>
+            <div className="animate-marquee whitespace-nowrap">
               🎉 Welcome to NeoBB! The best community platform since 1999! 🎉
               &nbsp;&nbsp;&nbsp;
               📢 New features: Drag & Drop Portal, Widget System, Plugin Architecture!
               &nbsp;&nbsp;&nbsp;
               🔥 Join our community today!
-            </marquee>
+            </div>
           </div>
 
           {/* Features Table */}

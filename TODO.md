@@ -37,32 +37,32 @@
 ## 📋 Phase 2: Master Data & Mock Repository
 
 ### Domain Entities
-- [ ] User
-- [ ] Role / Permission
-- [ ] Category
-- [ ] Board
-- [ ] Thread
-- [ ] Post
-- [ ] Widget
-- [ ] Theme
-- [ ] Notification
+- [x] User
+- [x] Role / Permission
+- [x] Category
+- [x] Board
+- [x] Thread
+- [x] Post
+- [x] Widget
+- [x] Theme
+- [x] Notification
 
 ### Mock Data
-- [ ] mockUsers
-- [ ] mockRoles
-- [ ] mockCategories
-- [ ] mockBoards
-- [ ] mockThreads
-- [ ] mockPosts
-- [ ] mockWidgets
+- [x] mockUsers
+- [x] mockRoles
+- [x] mockCategories
+- [x] mockBoards
+- [x] mockThreads
+- [x] mockPosts
+- [x] mockWidgets
 
 ### Mock Repository
-- [ ] UserMockRepository
-- [ ] CategoryMockRepository
-- [ ] BoardMockRepository
-- [ ] ThreadMockRepository
-- [ ] PostMockRepository
-- [ ] WidgetMockRepository
+- [x] UserMockRepository
+- [x] CategoryMockRepository
+- [x] BoardMockRepository
+- [x] ThreadMockRepository
+- [x] PostMockRepository
+- [x] WidgetMockRepository
 
 ---
 
