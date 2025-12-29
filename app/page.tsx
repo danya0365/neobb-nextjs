@@ -1,3 +1,5 @@
+import { PortalView } from "@/src/presentation/components/portal/PortalView";
+
 export default function Home() {
-  return <div>Home</div>;
+  return <PortalView />;
 }
