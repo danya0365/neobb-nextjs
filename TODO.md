@@ -85,9 +85,9 @@
 - [x] app/forum/[boardId]/[threadId]/page.tsx (Post listing)
 
 ### User
-- [ ] app/profile/[userId]/page.tsx
-- [ ] app/auth/login/page.tsx
-- [ ] app/auth/register/page.tsx
+- [x] app/profile/[userId]/page.tsx
+- [x] app/auth/login/page.tsx
+- [x] app/auth/register/page.tsx
 
 ### Admin
 - [ ] app/admin/page.tsx (Dashboard)
