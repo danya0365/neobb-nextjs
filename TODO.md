@@ -74,15 +74,15 @@
 - [x] LandingView (Main + Retro variants)
 
 ### Portal Homepage
-- [ ] app/portal/page.tsx
-- [ ] PortalPresenter
-- [ ] PortalView (Widget-based layout)
+- [x] app/portal/page.tsx
+- [x] PortalPresenter
+- [x] PortalView (Widget-based layout)
 - [ ] Drag & Drop Widget System
 
 ### Forum
-- [ ] app/forum/page.tsx (Board listing)
-- [ ] app/forum/[boardId]/page.tsx (Thread listing)
-- [ ] app/forum/[boardId]/[threadId]/page.tsx (Post listing)
+- [x] app/forum/page.tsx (Board listing)
+- [x] app/forum/[boardId]/page.tsx (Thread listing)
+- [x] app/forum/[boardId]/[threadId]/page.tsx (Post listing)
 
 ### User
 - [ ] app/profile/[userId]/page.tsx
