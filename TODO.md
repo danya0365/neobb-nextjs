@@ -5,7 +5,7 @@
 
 ---
 
-## 📋 Phase 1: Foundation & Layout
+## 📋 Phase 1: Foundation & Layout ✅
 
 ### Layout System
 - [x] สร้าง LayoutProvider (context สำหรับ switch layout)
@@ -34,7 +34,7 @@
 
 ---
 
-## 📋 Phase 2: Master Data & Mock Repository
+## 📋 Phase 2: Master Data & Mock Repository ✅
 
 ### Domain Entities
 - [x] User
@@ -66,7 +66,7 @@
 
 ---
 
-## 📋 Phase 3: Core Pages
+## 📋 Phase 3: Core Pages ✅
 
 ### Landing Page
 - [x] app/landing/page.tsx
@@ -83,11 +83,16 @@
 - [x] app/forum/page.tsx (Board listing)
 - [x] app/forum/[boardId]/page.tsx (Thread listing)
 - [x] app/forum/[boardId]/[threadId]/page.tsx (Post listing)
+- [x] app/forum/[boardId]/new/page.tsx (Create Thread)
 
 ### User
 - [x] app/profile/[userId]/page.tsx
 - [x] app/auth/login/page.tsx
 - [x] app/auth/register/page.tsx
+- [x] app/bookmarks/page.tsx
+- [x] app/settings/page.tsx
+- [x] app/notifications/page.tsx
+- [x] app/messages/page.tsx
 
 ### Admin
 - [x] app/admin/page.tsx (Dashboard)
@@ -97,21 +102,36 @@
 - [ ] app/admin/widgets/page.tsx
 - [ ] app/admin/themes/page.tsx
 
+### Additional Pages
+- [x] app/members/page.tsx (Member Directory)
+- [x] app/activity/page.tsx (Activity Feed)
+- [x] app/online/page.tsx (Online Users)
+- [x] app/leaderboard/page.tsx (User Rankings)
+- [x] app/search/page.tsx (Search)
+- [x] app/help/page.tsx (Help)
+
 ---
 
 ## 📋 Phase 4: Advanced Features
 
 ### Widget System
-- [ ] LatestThreadsWidget
-- [ ] TrendingTopicsWidget
-- [ ] OnlineUsersWidget
-- [ ] AnnouncementsWidget
-- [ ] UserStatsWidget
+- [x] LatestThreadsWidget (in Portal)
+- [x] TrendingTopicsWidget (TrendingThreads.tsx)
+- [x] OnlineUsersWidget (ActiveUsers.tsx)
+- [x] AnnouncementsWidget (in Portal)
+- [x] UserStatsWidget (ForumStats.tsx)
+
+### Interactive Components
+- [x] ThreadReactions (emoji reactions)
+- [x] ThreadPoll (voting polls)
+- [x] ThreadTags (hashtag labels)
+- [x] UserRankBadge (rank display)
 
 ### Notification System
+- [x] NotificationMockRepository
+- [x] NotificationsView (Main + Retro)
 - [ ] NotificationStore (Zustand)
-- [ ] NotificationDropdown
-- [ ] NotificationList
+- [ ] Real-time NotificationDropdown
 
 ### Theme System
 - [ ] ThemeStore (Zustand)
@@ -120,7 +140,7 @@
 
 ---
 
-## 📋 Phase 5: Supabase Integration
+## 📋 Phase 5: Supabase Integration (DEFERRED)
 
 - [ ] Supabase Client Config
 - [ ] Auth Repository (Supabase)
@@ -134,6 +154,8 @@
 
 ## 📋 Current Sprint
 
-### 🎯 Sprint 1: Layout & Landing Page ✅
-- [x] Task 1.1: สร้าง Layout System (MainLayout, RetroLayout)
-- [x] Task 1.2: สร้าง Landing Page (ทุก component แยกตาม layout)
+### 🎯 Sprint 10: Remaining Features ✅
+- [x] Admin Widgets Page
+- [x] Admin Themes Page
+- [x] Theme System (ThemeStore, ThemeSwitcher)
+- [x] NotificationStore (Zustand)
