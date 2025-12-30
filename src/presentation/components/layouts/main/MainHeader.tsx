@@ -9,6 +9,7 @@ export function MainHeader() {
   const { theme, setTheme } = useTheme();
   const { toggleLayout } = useLayoutStore();
   const [mounted, setMounted] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
 
   // Prevent hydration mismatch
   useEffect(() => {
@@ -19,7 +20,17 @@ export function MainHeader() {
     { href: "/landing", label: "Home", icon: "🏠" },
     { href: "/portal", label: "Portal", icon: "🌐" },
     { href: "/forum", label: "Forum", icon: "💬" },
-    { href: "/admin", label: "Admin", icon: "⚙️" },
+    { href: "/members", label: "Members", icon: "👥" },
+    { href: "/activity", label: "Activity", icon: "📊" },
+    { href: "/online", label: "Online", icon: "🟢" },
+  ];
+
+  const userMenuItems = [
+    { href: "/bookmarks", label: "Bookmarks", icon: "🔖" },
+    { href: "/notifications", label: "Notifications", icon: "🔔" },
+    { href: "/messages", label: "Messages", icon: "✉️" },
+    { href: "/settings", label: "Settings", icon: "⚙️" },
+    { href: "/admin", label: "Admin Panel", icon: "🛠️" },
   ];
 
   return (
@@ -65,7 +76,38 @@ export function MainHeader() {
             🖥️
           </button>
 
-          {/* Auth Buttons */}
+          {/* User Menu */}
+          <div className="main-user-menu-wrapper">
+            <button 
+              className="main-icon-button"
+              onClick={() => setShowUserMenu(!showUserMenu)}
+              title="User Menu"
+            >
+              👤
+            </button>
+            {showUserMenu && (
+              <div className="main-user-dropdown">
+                {userMenuItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="main-dropdown-item"
+                    onClick={() => setShowUserMenu(false)}
+                  >
+                    <span className="main-dropdown-icon">{item.icon}</span>
+                    {item.label}
+                  </Link>
+                ))}
+                <div className="main-dropdown-divider" />
+                <button className="main-dropdown-item main-dropdown-logout">
+                  <span className="main-dropdown-icon">🚪</span>
+                  Sign Out
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Auth Buttons (when logged out) */}
           <button className="main-button-outline">Sign In</button>
           <button className="main-button-primary">Sign Up</button>
         </div>

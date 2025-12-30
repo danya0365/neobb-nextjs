@@ -20,3 +20,269 @@
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 }
+
+/* Thread Reactions */
+.thread-reactions {
+  @apply flex flex-col gap-2 mt-4;
+}
+
+.thread-reactions-list {
+  @apply flex flex-wrap items-center gap-2;
+}
+
+.thread-reaction-btn {
+  @apply inline-flex items-center gap-1.5 px-3 py-1.5;
+  @apply rounded-full text-sm;
+  @apply bg-gray-100 dark:bg-gray-800;
+  @apply text-gray-700 dark:text-gray-300;
+  @apply hover:bg-gray-200 dark:hover:bg-gray-700;
+  @apply border border-transparent;
+  @apply transition-all duration-200;
+  @apply cursor-pointer;
+}
+
+.thread-reaction-btn.reacted {
+  @apply bg-indigo-100 dark:bg-indigo-900/30;
+  @apply text-indigo-700 dark:text-indigo-300;
+  @apply border-indigo-300 dark:border-indigo-700;
+}
+
+.reaction-emoji {
+  @apply text-base;
+}
+
+.reaction-count {
+  @apply text-xs font-medium;
+}
+
+.thread-reaction-add {
+  @apply w-8 h-8 flex items-center justify-center;
+  @apply rounded-full text-lg;
+  @apply bg-gray-100 dark:bg-gray-800;
+  @apply text-gray-500 dark:text-gray-400;
+  @apply hover:bg-indigo-100 dark:hover:bg-indigo-900/30;
+  @apply hover:text-indigo-600 dark:hover:text-indigo-400;
+  @apply transition-all duration-200;
+  @apply cursor-pointer;
+}
+
+.thread-reactions-picker {
+  @apply flex gap-2 p-2;
+  @apply bg-white dark:bg-gray-800;
+  @apply rounded-xl shadow-lg;
+  @apply border border-gray-200 dark:border-gray-700;
+}
+
+.reaction-picker-btn {
+  @apply w-10 h-10 flex items-center justify-center;
+  @apply rounded-lg text-xl;
+  @apply hover:bg-gray-100 dark:hover:bg-gray-700;
+  @apply transition-all duration-200;
+  @apply cursor-pointer;
+}
+
+.reaction-picker-btn.reacted {
+  @apply bg-indigo-100 dark:bg-indigo-900/30;
+}
+
+.thread-reactions-summary {
+  @apply text-xs text-gray-500 dark:text-gray-400;
+}
+
+/* Leaderboard */
+.leaderboard-container {
+  @apply max-w-4xl mx-auto p-6;
+}
+
+.leaderboard-header {
+  @apply mb-8 text-center;
+}
+
+.leaderboard-title {
+  @apply text-3xl font-bold;
+  @apply bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500;
+  @apply bg-clip-text text-transparent;
+}
+
+.leaderboard-subtitle {
+  @apply text-gray-500 dark:text-gray-400 mt-2;
+}
+
+.leaderboard-list {
+  @apply space-y-3;
+}
+
+.leaderboard-item {
+  @apply flex items-center gap-4 p-4;
+  @apply bg-white dark:bg-gray-800;
+  @apply rounded-xl;
+  @apply border border-gray-200 dark:border-gray-700;
+  @apply transition-all duration-200;
+}
+
+.leaderboard-item:hover {
+  @apply border-indigo-300 dark:border-indigo-700;
+  @apply shadow-lg;
+}
+
+.leaderboard-rank {
+  @apply w-10 h-10 flex items-center justify-center;
+  @apply rounded-full font-bold text-lg;
+}
+
+.leaderboard-rank.gold {
+  @apply bg-gradient-to-br from-yellow-400 to-yellow-600 text-white;
+}
+
+.leaderboard-rank.silver {
+  @apply bg-gradient-to-br from-gray-300 to-gray-500 text-white;
+}
+
+.leaderboard-rank.bronze {
+  @apply bg-gradient-to-br from-orange-400 to-orange-600 text-white;
+}
+
+.leaderboard-rank.default {
+  @apply bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300;
+}
+
+.leaderboard-user {
+  @apply flex-1;
+}
+
+.leaderboard-username {
+  @apply font-semibold text-gray-900 dark:text-white;
+}
+
+.leaderboard-stats {
+  @apply text-sm text-gray-500 dark:text-gray-400;
+}
+
+.leaderboard-score {
+  @apply text-right;
+}
+
+.leaderboard-points {
+  @apply text-xl font-bold text-indigo-600 dark:text-indigo-400;
+}
+
+.leaderboard-label {
+  @apply text-xs text-gray-500 dark:text-gray-400;
+}
+
+/* Thread Poll */
+.thread-poll {
+  @apply p-4 rounded-xl;
+  @apply bg-gray-50 dark:bg-gray-800/50;
+  @apply border border-gray-200 dark:border-gray-700;
+}
+
+.poll-header {
+  @apply flex items-center gap-2 mb-4;
+}
+
+.poll-icon {
+  @apply text-xl;
+}
+
+.poll-question {
+  @apply font-semibold text-gray-900 dark:text-white;
+}
+
+.poll-options {
+  @apply space-y-2;
+}
+
+.poll-option {
+  @apply w-full p-3 rounded-lg text-left;
+  @apply bg-white dark:bg-gray-800;
+  @apply border border-gray-200 dark:border-gray-700;
+  @apply hover:border-indigo-300 dark:hover:border-indigo-700;
+  @apply transition-all duration-200;
+  @apply cursor-pointer relative overflow-hidden;
+}
+
+.poll-option.voted {
+  @apply cursor-default;
+}
+
+.poll-option.selected {
+  @apply border-indigo-500 dark:border-indigo-500;
+  @apply bg-indigo-50 dark:bg-indigo-900/20;
+}
+
+.poll-option-content {
+  @apply flex justify-between items-center relative z-10;
+}
+
+.poll-option-text {
+  @apply font-medium text-gray-900 dark:text-white;
+}
+
+.poll-option-votes {
+  @apply text-sm text-gray-500 dark:text-gray-400;
+}
+
+.poll-option-bar-wrapper {
+  @apply mt-2 relative h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden;
+}
+
+.poll-option-bar {
+  @apply absolute inset-y-0 left-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full;
+  @apply transition-all duration-500;
+}
+
+.poll-option-percentage {
+  @apply absolute right-0 -top-5 text-xs font-medium text-gray-600 dark:text-gray-400;
+}
+
+.poll-check {
+  @apply absolute right-3 top-1/2 -translate-y-1/2 text-indigo-600;
+}
+
+.poll-footer {
+  @apply flex justify-between items-center mt-4 text-sm text-gray-500 dark:text-gray-400;
+}
+
+/* Thread Tags */
+.thread-tags {
+  @apply flex flex-wrap gap-2;
+}
+
+.thread-tag {
+  @apply inline-flex items-center gap-1 px-2.5 py-1;
+  @apply rounded-full text-xs font-medium;
+  @apply bg-gray-100 dark:bg-gray-800;
+  @apply text-gray-700 dark:text-gray-300;
+  @apply hover:bg-indigo-100 dark:hover:bg-indigo-900/30;
+  @apply hover:text-indigo-700 dark:hover:text-indigo-300;
+  @apply transition-all duration-200;
+  @apply cursor-pointer;
+}
+
+.thread-tag.active {
+  @apply bg-indigo-100 dark:bg-indigo-900/30;
+  @apply text-indigo-700 dark:text-indigo-300;
+}
+
+.tag-selector {
+  @apply flex flex-wrap gap-2 p-3;
+  @apply bg-gray-50 dark:bg-gray-800;
+  @apply rounded-xl border border-gray-200 dark:border-gray-700;
+}
+
+.tag-input {
+  @apply flex-1 min-w-32 px-3 py-1.5;
+  @apply bg-white dark:bg-gray-900;
+  @apply border border-gray-200 dark:border-gray-700;
+  @apply rounded-lg text-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-indigo-500;
+}
+
+.tag-add-btn {
+  @apply px-3 py-1.5 rounded-lg text-sm font-medium;
+  @apply bg-indigo-600 text-white;
+  @apply hover:bg-indigo-700;
+  @apply transition-colors duration-200;
+  @apply cursor-pointer;
+}

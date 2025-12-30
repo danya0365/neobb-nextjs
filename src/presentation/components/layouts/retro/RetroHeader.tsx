@@ -97,6 +97,33 @@ export function RetroHeader() {
           <span className="retro-toolbar-icon">💬</span>
           <span className="retro-toolbar-label">Forum</span>
         </Link>
+        <Link href="/members" className="retro-toolbar-btn">
+          <span className="retro-toolbar-icon">👥</span>
+          <span className="retro-toolbar-label">Members</span>
+        </Link>
+        <Link href="/activity" className="retro-toolbar-btn">
+          <span className="retro-toolbar-icon">📊</span>
+          <span className="retro-toolbar-label">Activity</span>
+        </Link>
+        <Link href="/online" className="retro-toolbar-btn">
+          <span className="retro-toolbar-icon">🟢</span>
+          <span className="retro-toolbar-label">Online</span>
+        </Link>
+
+        <div className="retro-toolbar-separator" />
+
+        <Link href="/bookmarks" className="retro-toolbar-btn">
+          <span className="retro-toolbar-icon">🔖</span>
+          <span className="retro-toolbar-label">Bookmarks</span>
+        </Link>
+        <Link href="/messages" className="retro-toolbar-btn">
+          <span className="retro-toolbar-icon">✉️</span>
+          <span className="retro-toolbar-label">Mail</span>
+        </Link>
+        <Link href="/notifications" className="retro-toolbar-btn">
+          <span className="retro-toolbar-icon">🔔</span>
+          <span className="retro-toolbar-label">Alerts</span>
+        </Link>
         <Link href="/admin" className="retro-toolbar-btn">
           <span className="retro-toolbar-icon">⚙️</span>
           <span className="retro-toolbar-label">Admin</span>

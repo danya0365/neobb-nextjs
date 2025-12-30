@@ -99,6 +99,47 @@
   @apply transition-all duration-200;
 }
 
+/* User Menu Dropdown */
+.main-user-menu-wrapper {
+  @apply relative;
+}
+
+.main-user-dropdown {
+  @apply absolute right-0 top-full mt-2;
+  @apply w-56 py-2;
+  @apply bg-white dark:bg-gray-800;
+  @apply rounded-xl shadow-xl;
+  @apply border border-gray-200 dark:border-gray-700;
+  @apply z-50;
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.main-dropdown-item {
+  @apply flex items-center gap-3 w-full;
+  @apply px-4 py-2.5;
+  @apply text-sm text-gray-700 dark:text-gray-200;
+  @apply hover:bg-gray-100 dark:hover:bg-gray-700;
+  @apply transition-colors duration-150;
+  @apply cursor-pointer;
+}
+
+.main-dropdown-icon {
+  @apply text-base;
+}
+
+.main-dropdown-divider {
+  @apply my-2 border-t border-gray-200 dark:border-gray-700;
+}
+
+.main-dropdown-logout {
+  @apply text-red-600 dark:text-red-400;
+}
+
 /* ============================================
    Footer
    ============================================ */
