@@ -6,6 +6,9 @@ import { animated, config, useSpring } from "@react-spring/web";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MainButton } from "../ui/main/MainButton";
+import { ThreadPoll } from "./ThreadPoll";
+import { ThreadReactions } from "./ThreadReactions";
+import { ThreadTags } from "./ThreadTags";
 
 const boardRepo = new BoardMockRepository();
 const threadRepo = new ThreadMockRepository();
@@ -119,6 +122,13 @@ export function MainThreadContent({ boardId, threadId }: MainThreadContentProps)
               </div>
             </div>
           </div>
+
+          {/* Tags */}
+          {thread.tags && thread.tags.length > 0 && (
+            <div className="mt-4">
+              <ThreadTags tags={thread.tags} />
+            </div>
+          )}
         </div>
 
         {/* Original Post */}
@@ -131,30 +141,16 @@ export function MainThreadContent({ boardId, threadId }: MainThreadContentProps)
 
         {/* Poll */}
         {thread.poll && (
-          <div className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-6 mb-4 border border-purple-200 dark:border-purple-800">
-            <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
-              📊 {thread.poll.question}
-            </h3>
-            <div className="space-y-2">
-              {thread.poll.options.map((opt) => {
-                const totalVotes = thread.poll!.options.reduce((sum, o) => sum + o.votes, 0);
-                const percentage = totalVotes > 0 ? (opt.votes / totalVotes) * 100 : 0;
-                return (
-                  <div key={opt.id} className="relative">
-                    <div 
-                      className="absolute inset-0 bg-purple-200 dark:bg-purple-800 rounded-lg"
-                      style={{ width: `${percentage}%` }}
-                    />
-                    <div className="relative flex justify-between items-center p-3">
-                      <span className="text-gray-900 dark:text-white">{opt.text}</span>
-                      <span className="text-sm text-gray-600 dark:text-gray-300">
-                        {opt.votes} votes ({percentage.toFixed(0)}%)
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+          <div className="mb-6">
+            <ThreadPoll
+              pollId={thread.id}
+              question={thread.poll.question}
+              options={thread.poll.options.map(opt => ({
+                id: opt.id,
+                text: opt.text,
+                votes: opt.votes,
+              }))}
+            />
           </div>
         )}
 
@@ -239,19 +235,12 @@ function PostCard({ author, content, createdAt, isOP, isEdited, reactions }: Pos
             <div dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, '<br/>') }} />
           </div>
           
+          {/* Reactions */}
+          <ThreadReactions threadId={`post-${createdAt}`} />
+          
           {/* Footer */}
           <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 pt-4 border-t border-gray-200 dark:border-gray-700">
-            <div className="flex items-center gap-4">
-              {reactions && reactions.length > 0 && (
-                <div className="flex gap-1">
-                  {reactions.map((r, i) => (
-                    <span key={i} className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
-                      {r.type} {r.count}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
+            <div></div>
             <div>
               {new Date(createdAt).toLocaleString("th-TH")}
               {isEdited && <span className="ml-2 text-yellow-600">(แก้ไขแล้ว)</span>}
