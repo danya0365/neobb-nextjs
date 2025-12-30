@@ -21,6 +21,7 @@ import { animated, config, useSpring } from "@react-spring/web";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SortableWidget } from "./SortableWidget";
+import { WidgetCreatorModal } from "./WidgetCreatorModal";
 
 const threadRepo = new ThreadMockRepository();
 const boardRepo = new BoardMockRepository();
@@ -36,6 +37,7 @@ export function DraggablePortalContent() {
   const [stats, setStats] = useState({ totalUsers: 0, activeUsers: 0, totalPosts: 0, totalThreads: 0 });
   const [onlineUsers, setOnlineUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isCreatorOpen, setIsCreatorOpen] = useState(false);
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -198,16 +200,26 @@ export function DraggablePortalContent() {
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">🌐 Portal</h1>
             <p className="text-gray-600 dark:text-gray-400">ศูนย์กลางชุมชน NeoBB</p>
           </div>
-          <button
-            onClick={toggleEditMode}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              isEditMode
-                ? "bg-green-600 text-white"
-                : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
-            }`}
-          >
-            {isEditMode ? "✓ บันทึก" : "✏️ จัดเรียง Widgets"}
-          </button>
+          <div className="flex gap-3">
+            {isEditMode && (
+              <button
+                onClick={() => setIsCreatorOpen(true)}
+                className="px-4 py-2 rounded-lg font-medium bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+              >
+                ➕ เพิ่ม Widget
+              </button>
+            )}
+            <button
+              onClick={toggleEditMode}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                isEditMode
+                  ? "bg-green-600 text-white"
+                  : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+              }`}
+            >
+              {isEditMode ? "✓ บันทึก" : "✏️ จัดเรียง Widgets"}
+            </button>
+          </div>
         </div>
 
         {isEditMode && (
@@ -265,6 +277,8 @@ export function DraggablePortalContent() {
           </div>
         </div>
       </div>
+      
+      <WidgetCreatorModal isOpen={isCreatorOpen} onClose={() => setIsCreatorOpen(false)} />
     </animated.div>
   );
 }
