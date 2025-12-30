@@ -138,6 +138,14 @@
 - [x] ThemeSwitcher
 - [x] Custom Theme Editor
 
+### Social & Interaction Features
+- [x] User Mention System (@username)
+- [x] Quote Reply System
+- [x] Thread Subscription / Follow
+- [x] Private Message System
+- [x] Report Content System
+- [x] Markdown Editor with Preview
+
 ---
 
 ## 📋 Phase 5: Supabase Integration (DEFERRED)
