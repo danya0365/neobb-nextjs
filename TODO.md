@@ -77,7 +77,7 @@
 - [x] app/portal/page.tsx
 - [x] PortalPresenter
 - [x] PortalView (Widget-based layout)
-- [ ] Drag & Drop Widget System
+- [x] Drag & Drop Widget System
 
 ### Forum
 - [x] app/forum/page.tsx (Board listing)
@@ -130,13 +130,13 @@
 ### Notification System
 - [x] NotificationMockRepository
 - [x] NotificationsView (Main + Retro)
-- [ ] NotificationStore (Zustand)
-- [ ] Real-time NotificationDropdown
+- [x] NotificationStore (Zustand)
+- [x] Real-time NotificationDropdown
 
 ### Theme System
-- [ ] ThemeStore (Zustand)
-- [ ] ThemeSwitcher
-- [ ] Custom Theme Editor
+- [x] ThemeStore (Zustand)
+- [x] ThemeSwitcher
+- [x] Custom Theme Editor
 
 ---
 

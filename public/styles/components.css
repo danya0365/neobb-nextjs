@@ -286,3 +286,46 @@
   @apply transition-colors duration-200;
   @apply cursor-pointer;
 }
+
+/* Sortable Widget */
+.sortable-widget {
+  @apply relative;
+}
+
+.sortable-widget.edit-mode {
+  @apply ring-2 ring-indigo-300 dark:ring-indigo-700 rounded-2xl;
+}
+
+.sortable-widget.dragging {
+  @apply z-50;
+}
+
+.widget-controls {
+  @apply absolute -top-2 -right-2 flex gap-1 z-10;
+}
+
+.widget-drag-handle {
+  @apply w-8 h-8 flex items-center justify-center;
+  @apply bg-indigo-600 text-white rounded-full;
+  @apply cursor-grab active:cursor-grabbing;
+  @apply shadow-lg;
+  @apply hover:bg-indigo-700;
+  @apply transition-colors;
+}
+
+.widget-visibility-btn {
+  @apply w-8 h-8 flex items-center justify-center;
+  @apply bg-gray-600 text-white rounded-full;
+  @apply shadow-lg;
+  @apply hover:bg-gray-700;
+  @apply transition-colors;
+}
+
+.widget-visibility-btn.visible {
+  @apply bg-green-600 hover:bg-green-700;
+}
+
+.widget-visibility-btn.hidden {
+  @apply bg-gray-400 hover:bg-gray-500;
+}
+

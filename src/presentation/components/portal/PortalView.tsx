@@ -2,7 +2,7 @@
 
 import { LayoutProvider } from "@/src/presentation/providers/LayoutProvider";
 import { useLayoutStore } from "@/src/presentation/stores/layoutStore";
-import { MainPortalContent } from "./MainPortalContent";
+import { DraggablePortalContent } from "./DraggablePortalContent";
 import { RetroPortalContent } from "./RetroPortalContent";
 
 export function PortalView() {
@@ -13,8 +13,9 @@ export function PortalView() {
       {currentLayout === "retro" ? (
         <RetroPortalContent />
       ) : (
-        <MainPortalContent />
+        <DraggablePortalContent />
       )}
     </LayoutProvider>
   );
 }
+
